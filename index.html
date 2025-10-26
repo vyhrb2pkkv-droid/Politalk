@@ -1,0 +1,96 @@
+
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Politalk — Quiz (Static)</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="nav">
+    <div class="container wrap">
+      <a class="brand" href="#">
+        <img src="assets/logo.svg" alt="Politalk">
+        <span>Politalk</span>
+      </a>
+      <div class="small">Demo statica — funziona su iPad</div>
+    </div>
+  </div>
+
+  <main class="container hero">
+    <div class="grid grid-2">
+      <section>
+        <span class="badge grad-gold">Quiz politico avanzato</span>
+        <h1>Capire la politica, senza propaganda.</h1>
+        <p>30 domande con slider, risultato con <b>radar 4 assi</b>, <b>mappa 2D</b>, famiglia ideologica e <b>partito più vicino</b>. Tutto offline, anche su iPad.</p>
+        <div class="mt">
+          <a class="btn primary grad-gold" href="#quiz">Inizia il Quiz</a>
+        </div>
+      </section>
+      <aside class="card">
+        <h3 style="margin-bottom:6px">Anteprima</h3>
+        <p class="small">Radar • Mappa 2D • Matching</p>
+        <div class="kpi">
+          <div class="box"><div class="n">4</div><div class="l">Assi</div></div>
+          <div class="box"><div class="n">30</div><div class="l">Domande</div></div>
+          <div class="box"><div class="n">1</div><div class="l">Partito vicino</div></div>
+        </div>
+      </aside>
+    </div>
+
+    <div id="quiz" class="section wizard card">
+      <div class="flex">
+        <h2>Quiz Politalk</h2>
+        <div id="count" class="small">0/30 domande</div>
+      </div>
+      <div class="progress"><div class="bar"></div></div>
+      <div id="stage" class="mt slide"></div>
+      <div class="mt flex">
+        <button id="back" class="btn">Indietro</button>
+        <button id="next" class="btn primary grad-gold">Avanti</button>
+      </div>
+    </div>
+
+    <div id="result" class="section" style="display:none">
+      <div class="result">
+        <section class="card">
+          <h2 id="title">—</h2>
+          <ul id="bullets" style="padding-left:0;list-style:none;color:#C6D0E8"></ul>
+
+          <div class="grid" style="grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+            <div class="canvasBox">
+              <canvas id="radar" width="400" height="300" style="width:100%;height:240px"></canvas>
+            </div>
+            <div class="canvasBox">
+              <canvas id="scatter" width="400" height="300" style="width:100%;height:240px"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <aside class="card">
+          <h3>Dove potresti riconoscerti</h3>
+          <div class="card" style="padding:12px;margin-bottom:10px">
+            <div class="small">Famiglia ideologica più vicina</div>
+            <div id="fam" style="font-weight:700;margin-top:4px">—</div>
+          </div>
+          <div class="card" style="padding:12px">
+            <div class="small">Partito italiano più vicino oggi</div>
+            <div id="party" style="font-weight:700;margin-top:4px">—</div>
+            <p class="note">Questo è un matching basato sulle tue risposte, non un consiglio di voto.</p>
+          </div>
+          <div class="mt">
+            <a href="#quiz" class="btn">Rifai il quiz</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container wrap">© Politalk — progetto civico sperimentale.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
