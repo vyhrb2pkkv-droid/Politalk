@@ -1,94 +1,117 @@
-
 <!doctype html>
 <html lang="it">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Politalk — Quiz (Static)</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Politalk — Informazione seria. Confronto civile. Matching politico.</title>
+  <meta name="description" content="Politalk: il civic-tech italiano che unisce confronto pubblico, spiegazioni super partes e un test di matching politico per capire davvero dove ti posizioni.">
+  <meta property="og:title" content="Politalk — civic-tech per capire la politica">
+  <meta property="og:description" content="Social di confronto + profilo politico personalizzato.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0B1B3A">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" href="assets/logo.svg" as="image">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="nav">
-    <div class="container wrap">
+  <nav class="nav">
+    <div class="container nav-inner">
       <a class="brand" href="#">
-        <img src="assets/logo.svg" alt="Politalk">
-        <span>Politalk</span>
+        <img src="assets/logo.svg" alt="Logo Politalk">
+        <span class="name">Politalk</span>
       </a>
-      <div class="small">Demo statica — funziona su iPad</div>
+      <a class="cta" href="#iscriviti" aria-label="Iscriviti alla lista d'attesa">Iscriviti</a>
     </div>
-  </div>
+  </nav>
 
-  <main class="container hero">
-    <div class="grid grid-2">
-      <section>
-        <span class="badge grad-gold">Quiz politico avanzato</span>
-        <h1>Capire la politica, senza propaganda.</h1>
-        <p>30 domande con slider, risultato con <b>radar 4 assi</b>, <b>mappa 2D</b>, famiglia ideologica e <b>partito più vicino</b>. Tutto offline, anche su iPad.</p>
-        <div class="mt">
-          <a class="btn primary grad-gold" href="#quiz">Inizia il Quiz</a>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">Nuova piattaforma civic‑tech</span>
+        <h1>Informazione seria. Confronto civile. <br>Matching politico, senza rumor.</h1>
+        <p class="lead">Politalk unisce spiegazioni neutre e verificate, dibattiti moderati e un test di <strong>profilazione politica</strong> per capire davvero dove ti posizioni sui temi.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#iscriviti">Provalo al lancio</a>
+          <a class="btn btn-outline" href="#funzioni">Scopri le funzioni</a>
         </div>
-      </section>
-      <aside class="card">
-        <h3 style="margin-bottom:6px">Anteprima</h3>
-        <p class="small">Radar • Mappa 2D • Matching</p>
-        <div class="kpi">
-          <div class="box"><div class="n">4</div><div class="l">Assi</div></div>
-          <div class="box"><div class="n">30</div><div class="l">Domande</div></div>
-          <div class="box"><div class="n">1</div><div class="l">Partito vicino</div></div>
+      </div>
+      <aside>
+        <div class="hero-card" role="region" aria-label="Anteprima funzionalità">
+          <header>
+            <img src="assets/logo.svg" alt="" width="32" height="32" aria-hidden="true">
+            <h3>Anteprima Politalk</h3>
+          </header>
+          <div class="kpis">
+            <div class="kpi"><div class="n">Test politico</div><div class="l">profilo personalizzato</div></div>
+            <div class="kpi"><div class="n">Fact‑checking</div><div class="l">fonti verificate</div></div>
+            <div class="kpi"><div class="n">Dibattiti civili</div><div class="l">moderazione smart</div></div>
+          </div>
         </div>
       </aside>
     </div>
+  </header>
 
-    <div id="quiz" class="section wizard card">
-      <div class="flex">
-        <h2>Quiz Politalk</h2>
-        <div id="count" class="small">0/30 domande</div>
-      </div>
-      <div class="progress"><div class="bar"></div></div>
-      <div id="stage" class="mt slide"></div>
-      <div class="mt flex">
-        <button id="back" class="btn">Indietro</button>
-        <button id="next" class="btn primary grad-gold">Avanti</button>
-      </div>
-    </div>
-
-    <div id="result" class="section" style="display:none">
-      <div class="result">
-        <section class="card">
-          <h2 id="title">—</h2>
-          <ul id="bullets" style="padding-left:0;list-style:none;color:#C6D0E8"></ul>
-
-          <div class="grid" style="grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
-            <div class="canvasBox">
-              <canvas id="radar" width="400" height="300" style="width:100%;height:240px"></canvas>
-            </div>
-            <div class="canvasBox">
-              <canvas id="scatter" width="400" height="300" style="width:100%;height:240px"></canvas>
-            </div>
-          </div>
-        </section>
-
-        <aside class="card">
-          <h3>Dove potresti riconoscerti</h3>
-          <div class="card" style="padding:12px;margin-bottom:10px">
-            <div class="small">Famiglia ideologica più vicina</div>
-            <div id="fam" style="font-weight:700;margin-top:4px">—</div>
-          </div>
-          <div class="card" style="padding:12px">
-            <div class="small">Partito italiano più vicino oggi</div>
-            <div id="party" style="font-weight:700;margin-top:4px">—</div>
-            <p class="note">Questo è un matching basato sulle tue risposte, non un consiglio di voto.</p>
-          </div>
-          <div class="mt">
-            <a href="#quiz" class="btn">Rifai il quiz</a>
-          </div>
-        </aside>
+  <section id="funzioni" class="section">
+    <div class="container">
+      <h2>Tre pilastri. Un’unica esperienza.</h2>
+      <div class="grid-3">
+        <article class="card">
+          <h3>1) Social del confronto</h3>
+          <p>Thread per tema (non per partito), toni civili, filtri anti‑flame e sintesi automatiche. Dai dati al ragionamento.</p>
+        </article>
+        <article class="card">
+          <h3>2) Profilo &amp; matching politico</h3>
+          <p>Questionario dinamico su economia, diritti e istituzioni. Vedi l’allineamento con partiti, correnti e famiglie ideologiche.</p>
+        </article>
+        <article class="card">
+          <h3>3) Spiegazioni super partes</h3>
+          <p>Glossario, mini‑guide e fact‑checking con citazioni. Distingui opinioni da fatti e resta aggiornato senza bias.</p>
+        </article>
       </div>
     </div>
-  </main>
+  </section>
 
-  <footer>
-    <div class="container wrap">© Politalk — progetto civico sperimentale.</div>
+  <section class="section">
+    <div class="container">
+      <div class="quote">
+        “Politalk è come avere un <strong>compagno di studi</strong> e un <strong>moderatore</strong> sempre con te: discuti, capisci, ti orienti. Senza urla.”
+      </div>
+    </div>
+  </section>
+
+  <section id="iscriviti" class="section">
+    <div class="container">
+      <h2>Vuoi provarlo appena esce?</h2>
+      <form id="waitlist" class="cta-bar" aria-label="Iscrizione lista d'attesa">
+        <input type="email" name="email" placeholder="la‑tua@email.it" aria-label="Email">
+        <button type="submit">Avvisami</button>
+      </form>
+      <p style="color: var(--slate); margin-top:10px;">Niente spam. Solo un’email al giorno del lancio.</p>
+    </div>
+  </section>
+
+  <section class="section faq">
+    <div class="container">
+      <h2>Domande frequenti</h2>
+      <details>
+        <summary>Politalk è neutrale?</summary>
+        <p>Sì. Separiamo dati e opinioni, mostriamo le fonti e indichiamo chiaramente quando un contenuto è editoriale.</p>
+      </details>
+      <details>
+        <summary>Come funziona il matching?</summary>
+        <p>Un questionario adattivo genera un profilo multi‑dimensionale (economia, diritti, istituzioni). Confrontiamo il tuo profilo con programmi e voti parlamentari.</p>
+      </details>
+      <details>
+        <summary>Quanto costa?</summary>
+        <p>L’anteprima è gratuita. In seguito: piano free + abbonamento “Pro” per strumenti avanzati (monitoraggio voti, analisi comparate, dossier PDF).</p>
+      </details>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © sandbox Politalk — progetto civico sperimentale. • <a href="#">Privacy</a> • <a href="#">Contatti</a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
